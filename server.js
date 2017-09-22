@@ -32,6 +32,11 @@ app.use(express.static("public"));
 mongoose.connect("mongodb://heroku_xrkjdd97:snqfjoatkglhl8fki90757gtov@ds147304.mlab.com:47304/heroku_xrkjdd97");
 var db = mongoose.connection;
 
+store: new MongoStore({
+  url: process.env.MONGOLAB_URI
+}),
+
+
 // Show any mongoose errors
 db.on("error", function(error) {
   console.log("Mongoose Error: ", error);
@@ -41,6 +46,7 @@ db.on("error", function(error) {
 db.once("open", function() {
   console.log("Mongoose connection successful.");
 });
+
 
 
 // Routes
