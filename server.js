@@ -29,7 +29,7 @@ app.use(bodyParser.urlencoded({
 app.use(express.static("public"));
 
 // Database configuration with mongoose
-mongoose.connect("mongodb://localhost/techcrunch");
+mongoose.connect("mongodb://heroku_xrkjdd97:snqfjoatkglhl8fki90757gtov@ds147304.mlab.com:47304/heroku_xrkjdd97");
 var db = mongoose.connection;
 
 // Show any mongoose errors
